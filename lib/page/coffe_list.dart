@@ -14,7 +14,6 @@ class _CoffeListState extends State<CoffeList> {
   final pageController = PageController(viewportFraction: 0.35);
   final pageTextController = PageController();
   double currentPage = 0.0;
-  double currenteText = 0.0;
   int row = 3;
   int col = 2;
   double lowerLimit = 0.0;
@@ -26,7 +25,7 @@ class _CoffeListState extends State<CoffeList> {
         currentPage = pageController.page!;
       });
 
-  void textScroController() => currenteText = currentPage;
+  void textScroController() => currentPage;
 
   @override
   void initState() {
@@ -89,7 +88,7 @@ class _CoffeListState extends State<CoffeList> {
             child: PageText(
               pageTextController: pageTextController,
               coffee: coffee,
-              currenteText: currenteText,
+              currenteText: currentPage,
               lowerLimit: lowerLimit,
               upperLimit: upperLimit,
               duration: duration,
